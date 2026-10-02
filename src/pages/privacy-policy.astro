@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Privacy Policy | CORNERSTONE HEALTH"
+  description="Read the Privacy Policy for Cornerstone Health Alaska."
+  canonical="https://cornerstonehealthalaska.org/privacy-policy/"
+  ogImage="https://cornerstonehealthalaska.org/wp-content/uploads/Union.png"
+>
+  <Header />
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero" aria-label="Privacy Policy">
+      <div class="page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <span>Privacy Policy</span>
+        </nav>
+        <h1 class="page-hero-title">Privacy Policy</h1>
+      </div>
+    </section>
+
+    <section class="legal-content-section">
+      <div class="section-inner legal-content">
+        <h2>Commitment to Privacy</h2>
+        <p>Cornerstone Health is committed to protecting your personal health information. This notice describes how medical information about you may be used and disclosed and how you can get access to this information.</p>
+
+        <h3>Information We Collect</h3>
+        <p>We collect information necessary to provide you with healthcare services, including personal identification details, medical history, insurance information, and billing details.</p>
+
+        <h3>How We Use Your Information</h3>
+        <p>Your information is used to:</p>
+        <ul>
+          <li>Provide diagnosis, treatment, and medical counseling.</li>
+          <li>Process billing and insurance claims.</li>
+          <li>Communicate with you regarding appointments and care plans.</li>
+          <li>Comply with federal HIPAA regulations and Alaska state laws.</li>
+        </ul>
+
+        <h3>Confidentiality</h3>
+        <p>All client communications and medical records are kept strictly confidential. We will not share your information with third parties without your explicit written consent, except where required by law.</p>
+
+        <h3>Contact Us</h3>
+        <p>If you have any questions regarding our Privacy Policy or HIPAA compliance, please contact our office at <a href="tel:9075227080">(907) 522-7080</a> or email <a href="mailto:info@cornerstonehealthalaska.org">info@cornerstonehealthalaska.org</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style is:global>
+  .legal-content-section {
+    padding: 80px 0;
+    background: #fff;
+  }
+  .legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+  }
+  .legal-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    color: #0b2545;
+    margin-top: 0;
+  }
+  .legal-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #1a6b72;
+    margin-top: 32px;
+  }
+  .legal-content ul {
+    padding-left: 20px;
+  }
+  .legal-content a {
+    color: #f36e24;
+    text-decoration: none;
+  }
+  .legal-content a:hover {
+    text-decoration: underline;
+  }
+</style>
