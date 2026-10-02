@@ -1,0 +1,89 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+}
+
+const {
+  title = "Home | CORNERSTONE HEALTH",
+  description = "Faith-based counseling services in Anchorage offering support for individuals, couples, and families. Schedule an appointment today.",
+  ogImage = "https://cornerstonehealthalaska.org/wp-content/uploads/Union.png",
+  canonical = "https://cornerstonehealthalaska.org/",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://cornerstonehealthalaska.org/wp-content/uploads/cropped-Cornerstone-Favicon-32x32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="https://cornerstonehealthalaska.org/wp-content/uploads/cropped-Cornerstone-Favicon-180x180.png" />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- Open Graph / Share Cards -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="CORNERSTONE HEALTH" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="830" />
+    <meta property="og:image:height" content="491" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://cornerstonehealthalaska.org/#organization",
+            "name": "CORNERSTONE HEALTH",
+            "url": "https://cornerstonehealthalaska.org/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://cornerstonehealthalaska.org/wp-content/uploads/Cornerstone-Logo-White.svg"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://cornerstonehealthalaska.org/#website",
+            "url": "https://cornerstonehealthalaska.org/",
+            "name": "CORNERSTONE HEALTH",
+            "publisher": { "@id": "https://cornerstonehealthalaska.org/#organization" }
+          }
+        ]
+      }
+    </script>
+
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

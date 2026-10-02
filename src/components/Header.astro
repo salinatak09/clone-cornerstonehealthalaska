@@ -1,0 +1,337 @@
+---
+// Header component with sticky navigation
+---
+
+<header class="site-header" id="site-header">
+  <nav class="nav-container" aria-label="Main navigation">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href="/" class="nav-logo" aria-label="Cornerstone Health Home">
+        <img
+          src="https://cornerstonehealthalaska.org/wp-content/uploads/Cornerstone-Logo-White.svg"
+          alt="CORNERSTONE HEALTH"
+          width="160"
+          height="52"
+          loading="eager"
+        />
+      </a>
+
+      <!-- Primary Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-item has-dropdown">
+          <a href="/services/counseling/" class="nav-link">
+            Services
+            <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/services/counseling/">Counseling</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="/resources/" class="nav-link">Resources</a></li>
+        <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Right side actions -->
+      <div class="nav-actions">
+        <a href="tel:9075227080" class="nav-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          Counseling: (907) 522-7080
+        </a>
+        <a href="https://cornerstonehealthalaska.org/contact/" class="btn btn-orange" id="nav-get-started">Get Started</a>
+        <a href="https://myupdox.com/portal/cornerstoneclinicmedicalcenter/html/index.html" class="nav-billing" target="_blank" rel="noopener">Billing Portal</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <ul class="mobile-nav-links">
+        <li><a href="/services/counseling/">Services</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/resources/">Resources</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="tel:9075227080">Counseling: (907) 522-7080</a></li>
+        <li><a href="/contact/" class="btn btn-orange mobile-cta">Get Started</a></li>
+        <li><a href="https://myupdox.com/portal/cornerstoneclinicmedicalcenter/html/index.html" target="_blank" rel="noopener">Billing Portal</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Hamburger toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger?.addEventListener('click', () => {
+    const isOpen = !mobileMenu?.hidden;
+    mobileMenu!.hidden = isOpen;
+    hamburger.setAttribute('aria-expanded', String(!isOpen));
+    hamburger.classList.toggle('open', !isOpen);
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!hamburger?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) {
+      if (mobileMenu && !mobileMenu.hidden) {
+        mobileMenu.hidden = true;
+        hamburger?.setAttribute('aria-expanded', 'false');
+        hamburger?.classList.remove('open');
+      }
+    }
+  });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #1a6b72;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .nav-container {
+    position: relative;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 72px;
+  }
+
+  .nav-logo {
+    flex-shrink: 0;
+    margin-right: 32px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-logo img {
+    height: 48px;
+    width: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    flex: 1;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 16px;
+    height: 72px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: #f0c040;
+  }
+
+  .dropdown-arrow {
+    transition: transform 0.2s;
+  }
+
+  .has-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    padding: 8px 0;
+    list-style: none;
+    min-width: 180px;
+    z-index: 100;
+  }
+
+  .has-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #0b2545;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.15s;
+  }
+
+  .dropdown-menu a:hover {
+    background: #f0f8f9;
+    color: #1a6b72;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .nav-phone {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+
+  .nav-phone:hover {
+    color: #f0c040;
+  }
+
+  .btn-orange {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #f36e24;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: 50px;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-orange:hover {
+    background: #e05c15;
+    transform: translateY(-1px);
+  }
+
+  .nav-billing {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+
+  .nav-billing:hover {
+    color: #f0c040;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: 12px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    background: #145960;
+    padding: 16px 24px 24px;
+  }
+
+  .mobile-nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .mobile-nav-links a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: color 0.2s;
+  }
+
+  .mobile-nav-links a:hover { color: #f0c040; }
+
+  .mobile-cta {
+    margin-top: 8px;
+    text-align: center;
+    border-bottom: none !important;
+  }
+
+  @media (max-width: 1024px) {
+    .nav-phone { display: none; }
+    .nav-billing { display: none; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-actions { display: none; }
+    .hamburger { display: flex; }
+    .nav-inner { justify-content: space-between; }
+  }
+</style>
