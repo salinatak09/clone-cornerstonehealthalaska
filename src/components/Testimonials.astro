@@ -1,0 +1,98 @@
+---
+  interface Props {
+    imageSrc: string;
+    imageAlt: string;
+    quote: string;
+    author: string;
+  }
+
+  const { imageSrc, quote, author, imageAlt } = Astro.props;
+---
+
+<section class="testimonial-section" aria-label="Client testimonials">
+  <div class="testimonial-inner">
+    <div class="testimonial-quote-wrap">
+      <div>
+        <span class="testimonial-label">Testimonials</span>
+        <blockquote class="testimonial-quote">
+          "{quote}"
+        </blockquote>
+        <p class="testimonial-author">— {author}</p>
+      </div>
+    </div>
+    <div class="testimonial-image">
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  
+  .testimonial-inner {
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .testimonial-quote-wrap {
+    background-image: url("/images/Testimonials-bg.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px;
+  }
+
+  .testimonial-label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #006271;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  .testimonial-quote {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(20px, 3vw, 37px);
+    font-weight: 700;
+    line-height: 1.3;
+    color: #0b2545;
+    margin: 0 0 20px;
+    quotes: none;
+  }
+
+  .testimonial-author {
+    font-size: 16px;
+    color: #0b2545;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .testimonial-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center top;
+  }
+  @media (max-width: 768px) {
+    .testimonial-inner { grid-template-columns: 1fr; }
+    .testimonial-image { display: none; }
+    .testimonial-quote-wrap { padding: 40px 24px; }
+  }
+</style>

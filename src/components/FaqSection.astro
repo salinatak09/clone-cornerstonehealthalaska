@@ -1,0 +1,167 @@
+---
+const faqs = [
+  {
+    question: "Do I have to be a Christian to receive counseling?",
+    answer:
+      "No. Counseling is available to everyone, regardless of their faith or background.",
+  },
+  {
+    question: "Is counseling covered by insurance?",
+    answer:
+      "Coverage depends on your insurance provider and plan. Please contact us for more information.",
+  },
+  {
+    question: "How long are sessions?",
+    answer:
+      "Most counseling sessions are approximately 50–60 minutes long.",
+  },
+  {
+    question: "Can I request a therapist who integrates faith into therapy?",
+    answer:
+      "Yes. You can request a therapist who incorporates faith into their counseling approach.",
+  },
+  {
+    question: "What if I’m not sure what kind of counseling I need?",
+    answer:
+      "That's okay. We can help you determine which type of counseling best fits your needs.",
+  },
+];
+---
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-list">
+    {faqs.map((faq, index) => (
+      <div class={`faq-item ${index === 0 ? "active" : ""}`}>
+        <button class="faq-question" type="button">
+          <span>{faq.question}</span>
+          <span class="icon">{index === 0 ? "−" : "+"}</span>
+        </button>
+
+        <div class="faq-answer">
+          <p>{faq.answer}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const button = item.querySelector(".faq-question");
+    const icon = item.querySelector(".icon");
+
+    button?.addEventListener("click", () => {
+      // Close all
+      faqItems.forEach((otherItem) => {
+        otherItem.classList.remove("active");
+
+        const otherIcon = otherItem.querySelector(".icon");
+        if (otherIcon) otherIcon.textContent = "+";
+      });
+
+      // Open clicked item if it wasn't already open
+      if (!item.classList.contains("active")) {
+        item.classList.add("active");
+
+        if (icon) icon.textContent = "−";
+      }
+    });
+  });
+</script>
+
+<style>
+  .faq {
+    max-width: 1115px;
+    margin: 0 auto;
+    padding: 0 20px 70px;
+  }
+
+  .faq h2 {
+    margin: 0 0 55px;
+    text-align: center;
+    color: #092b50;
+    font-size: 64px;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .faq-item {
+    overflow: hidden;
+    border-radius: 16px;
+    background: #c8e9ee;
+  }
+
+  .faq-question {
+    width: 100%;
+    padding: 27px 32px;
+    border: 0;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    color: #092b50;
+    font-family: inherit;
+    font-size: 23px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .icon {
+    flex-shrink: 0;
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+  }
+
+  .faq-answer p {
+    overflow: hidden;
+    margin: 0;
+    padding: 0 32px;
+    color: #092b50;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .faq-item.active .faq-answer {
+    grid-template-rows: 1fr;
+  }
+
+  .faq-item.active .faq-answer p {
+    padding-bottom: 25px;
+  }
+
+  @media (max-width: 768px) {
+    .faq h2 {
+      font-size: 40px;
+      margin-bottom: 35px;
+    }
+
+    .faq-question {
+      padding: 22px;
+      font-size: 18px;
+    }
+
+    .icon {
+      font-size: 28px;
+    }
+  }
+</style>

@@ -2,13 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import BlogSection from '../components/BlogSection.astro';
+import CTASection from '../components/CTASection.astro';
 ---
 
 <Layout
   title="Resources | CORNERSTONE HEALTH"
   description="Access patient resources, insurance info, forms, and guides to prepare for your appointment at Cornerstone Health in Anchorage."
   canonical="https://cornerstonehealthalaska.org/resources/"
-  ogImage="https://cornerstonehealthalaska.org/wp-content/uploads/Mask-group.png"
+  ogImage="/images/Mask-group.png"
 >
   <Header />
 
@@ -27,7 +30,7 @@ import Footer from '../components/Footer.astro';
         </div>
         <div class="resources-hero-image">
           <img
-            src="https://cornerstonehealthalaska.org/wp-content/uploads/Mask-group.png"
+            src="/images/Mask-group.png"
             alt="Group of friends smiling and celebrating together outdoors"
             width="830"
             height="491"
@@ -43,7 +46,7 @@ import Footer from '../components/Footer.astro';
       <div class="section-inner billing-inner">
         <div class="billing-image">
           <img
-            src="https://cornerstonehealthalaska.org/wp-content/uploads/shutterstock_2113556048-scaled.jpg"
+            src="/images/shutterstock_2113556048-scaled.jpg"
             alt="Smiling woman sitting on couch using laptop with a plant and lamp in the background"
             width="640"
             height="426"
@@ -54,15 +57,7 @@ import Footer from '../components/Footer.astro';
           <span class="eyebrow-label teal">How to Pay</span>
           <h2 id="billing-heading" class="section-heading">Billing &amp; Payments</h2>
           <p class="body-text">
-            For billing questions or to make a payment, please contact Spectrum Medical Billing Services. Payments can be mailed to:
-          </p>
-          <address class="billing-address">
-            <strong>Spectrum Medical Billing Services</strong><br />
-            P.O. Box 221149<br />
-            Anchorage, AK 99522
-          </address>
-          <p class="body-text" style="margin-top: 16px;">
-            For assistance over the phone, please call <a href="tel:9074405900">907-440-5900</a>. We’re here to help with any billing concerns.
+            For billing questions or to make a payment, please contact Spectrum Medical Billing Services. Payments can be mailed to:Spectrum Medical Billing Services P.O. Box 221149 Anchorage, AK 99522. For assistance over the phone, please call 907-440-5900. We’re here to help with any billing concerns.
           </p>
         </div>
       </div>
@@ -73,17 +68,20 @@ import Footer from '../components/Footer.astro';
       <div class="section-inner">
         <h2 id="insurance-heading" class="section-heading centered">Accepted Insurances</h2>
         <div class="insurance-logos">
-          <img src="https://cornerstonehealthalaska.org/wp-content/uploads/img-logo-blue-cross-blue-shield.svg" alt="Blue Cross Blue Shield" />
-          <img src="https://cornerstonehealthalaska.org/wp-content/uploads/img-logo-aetna.jpg" alt="Aetna" />
-          <img src="https://cornerstonehealthalaska.org/wp-content/uploads/im-logo-cigna-healthcare.svg" alt="Cigna" />
-          <img src="https://cornerstonehealthalaska.org/wp-content/uploads/img-logo-medicare.jpg" alt="Medicare" />
-          <img src="https://cornerstonehealthalaska.org/wp-content/uploads/TRICARE-Logo-Thumbnail.png" alt="Tricare" />
-          <img src="https://cornerstonehealthalaska.org/wp-content/uploads/triwest-healthcare-alliance-logo-png_seeklogo-264972-600x480.png" alt="TriWest" />
-          <img src="https://cornerstonehealthalaska.org/wp-content/uploads/carelon.png" alt="Carelon" />
-          <img src="https://cornerstonehealthalaska.org/wp-content/uploads/MODA.png" alt="Moda" />
-          <img src="https://cornerstonehealthalaska.org/wp-content/uploads/img-logo-geha.png" alt="GEHA" />
-          <img src="https://cornerstonehealthalaska.org/wp-content/uploads/Optum.png" alt="Optum" />
-          <img src="https://cornerstonehealthalaska.org/wp-content/uploads/United-Healthcare.png" alt="United Healthcare" />
+          <img src="/images/img-logo-blue-cross-blue-shield.svg" alt="Blue Cross Blue Shield" />
+          <img src="/images/img-logo-aetna.jpg" alt="Aetna" />
+          <img src="/images/im-logo-cigna-healthcare.svg" alt="Cigna" />
+          <img src="/images/img-logo-medicare.jpg" alt="Medicare" />
+          <img src="/images/TRICARE-Logo-Thumbnail.png" alt="Tricare" />
+          <img src="/images/triwest-healthcare-alliance-logo-png_seeklogo-264972-600x480.png" alt="TriWest" />
+          <img src="/images/carelon.png" alt="Carelon" />
+          <img src="/images/MODA.png" alt="Moda" />
+          <img src="/images/img-logo-geha.png" alt="GEHA" />
+          <img src="/images/Optum.png" alt="Optum" />
+          <img src="/images/United-Healthcare.png" alt="United Healthcare" />
+        </div>
+        <div class="info insurance-info">
+          <p>To request Cornerstone Health Medical records, please complete the Authorization to Release and Disclose Patient Information and return to the front desk staff either in-person or via fax at <a href="tel:9075227080" class="phone-link">(907) 522-7088</a>. If you would like digitized records, please provide a USB flash drive. For any questions or concerns regarding medical records, please call <a href="tel:9075227080" class="phone-link">(907) 522-7080</a>.</p>
         </div>
       </div>
     </section>
@@ -91,38 +89,36 @@ import Footer from '../components/Footer.astro';
     <!-- Client Intake Forms -->
     <section class="forms-section" id="client-intake-forms" aria-labelledby="forms-heading">
       <div class="section-inner forms-inner">
-        <span class="eyebrow-label teal">Start Your Visit</span>
-        <h2 id="forms-heading" class="section-heading">Client Intake Forms</h2>
-        <p class="body-text">
-          Complete forms electronically then email them to: <a href="mailto:info@cornerstonehealthalaska.org">info@cornerstonehealthalaska.org</a> or bring <strong>printed, signed copies to your appointment</strong>. Signing will be completed in person.
-        </p>
-        <p class="body-text">
-          Prior to scheduling an appointment, click on the intake packet buttons below to complete our new client intake form. Once the form is complete, you can either email or fax it to the clinic.
+        <span class="eyebrow-label teal centered">Start Your Visit</span>
+        <h2 id="forms-heading" class="section-heading centered">Client Intake Forms</h2>
+        <p class="body-text info">
+          Complete forms electronically then email them to: <a href="mailto:counselingoffice@christianhealth.org" class="phone-link">counselingoffice@christianhealth.org</a> or bring <strong>printed, signed copies to your appointment</strong>. Signing will be completed in person.
         </p>
 
-        <div class="forms-grid">
-          <a href="https://cornerstonehealthalaska.org/wp-content/uploads/Adult-Intake-Packet.pdf" class="form-btn" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-            Printable Adult Intake Packet
-          </a>
-          <a href="https://cornerstonehealthalaska.org/wp-content/uploads/Child-Adolescent-Intake-Packet.pdf" class="form-btn" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-            Child &amp; Adolescent Intake Packet
-          </a>
-          <a href="https://cornerstonehealthalaska.org/wp-content/uploads/Sliding-Fee-Discount-Application.pdf" class="form-btn" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-            Sliding Fee Discount Application
-          </a>
-          <a href="https://cornerstonehealthalaska.org/wp-content/uploads/ROI_CMC_to_self.pdf" class="form-btn" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-            Authorization to Release &amp; Disclose Patient Info
-          </a>
-        </div>
-
-        <div class="medical-records-info" style="margin-top: 40px;">
-          <p class="body-text" style="font-size: 14px; color: #666; line-height: 1.6;">
-            To request Cornerstone Health Medical records, please complete the Authorization to Release and Disclose Patient Information and return to the front desk staff either in-person or via fax at <a href="tel:9075227088">(907) 522-7088</a>. If you would like digitized records, please provide a USB flash drive. For any questions or concerns regarding medical records, please call <a href="tel:9075227080">(907) 522-7080</a>.
+        <div class="form-content">
+          <h1>Getting Started</h1>
+          <p class="body-text">
+            Prior to scheduling an appointment, click on the intake packet buttons below to complete our new client intake form. Once the form is complete, you can either email or fax it to the clinic.
           </p>
+
+          <div class="forms-grid">
+            <a href="/images/Adult-Intake-Packet.pdf" class="form-btn" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Printable Adult Intake Packet
+            </a>
+            <a href="/images/Child-Adolescent-Intake-Packet.pdf" class="form-btn" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Child &amp; Adolescent Intake Packet
+            </a>
+            <a href="/images/Sliding-Fee-Discount-Application.pdf" class="form-btn" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Sliding Fee Discount Application
+            </a>
+            <a href="/images/ROI_CMC_to_self.pdf" class="form-btn" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Authorization to Release &amp; Disclose Patient Info
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -208,6 +204,12 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
     </section>
+
+    <!-- Blog Section -->
+     <BlogSection />
+
+     <!-- CTA Section -->
+    <CTASection/>
   </main>
 
   <Footer />
@@ -228,7 +230,7 @@ import Footer from '../components/Footer.astro';
 
   .billing-section {
     padding: 80px 0;
-    background: #fff;
+    background: #f1f9fa;
   }
   .billing-inner {
     display: grid;
@@ -267,19 +269,41 @@ import Footer from '../components/Footer.astro';
     max-width: 120px;
     height: auto;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.7;
     transition: all 0.2s;
   }
   .insurance-logos img:hover {
     filter: none;
     opacity: 1;
   }
+  .info {
+    margin: 40px auto;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #666;
+    text-align: center;
+  }
+  .insurance-info {
+    max-width: 950px;
+  }
+  .phone-link{
+    color: #f36e24;
+    font-weight: 700;
+    text-decoration: none;
+  }
 
   /* Client Intake Forms */
   .forms-section {
     padding: 80px 0;
     background: #fff;
+  }
+  .forms-inner {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .form-content{
+    background: #cfe3e6;
+    padding: 40px;
+    border-radius: 20px;
   }
   .forms-grid {
     display: grid;
@@ -292,7 +316,7 @@ import Footer from '../components/Footer.astro';
     align-items: center;
     justify-content: center;
     gap: 12px;
-    background: #1a6b72;
+    background: #f36e24;
     color: #fff;
     text-decoration: none;
     padding: 16px 24px;
@@ -307,6 +331,54 @@ import Footer from '../components/Footer.astro';
     background: #135258;
     transform: translateY(-2px);
   }
+
+  .faq-section {
+    padding: 80px 0;
+    background: #f8f8f8;
+  }
+  .faq-accordion {
+    max-width: 900px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .faq-item {
+    background: #c8e9ed;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+  .faq-question {
+    padding: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0b2545;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+  .faq-icon {
+    transition: transform 0.2s;
+  }
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+  .faq-answer {
+    padding: 0 24px 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 16px;
+  }
+  .faq-answer p { margin: 0; }
 
   @media (max-width: 1024px) {
     .resources-hero-inner {

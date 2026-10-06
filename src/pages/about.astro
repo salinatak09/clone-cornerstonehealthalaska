@@ -2,13 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CTASection from '../components/CTASection.astro';
 ---
 
 <Layout
   title="About Us | CORNERSTONE HEALTH"
   description="Discover faith-based counseling in Anchorage, where individuals and families can find hope, healing, and support."
   canonical="https://cornerstonehealthalaska.org/about/"
-  ogImage="https://cornerstonehealthalaska.org/wp-content/uploads/Union.png"
+  ogImage="/images/Union.png"
 >
   <Header />
 
@@ -24,6 +26,15 @@ import Footer from '../components/Footer.astro';
         <h1 class="page-hero-title">About Us</h1>
         <p class="page-hero-desc">Discover faith-based counseling in Anchorage, where individuals and families can find hope, healing, and support.</p>
       </div>
+      <div class="page-hero-image">
+        <img
+          src="/images/about-us-banner.webp"
+          alt="Two people walking together outdoors"
+          width="400"
+          height="340"
+          loading="lazy"
+        />
+      </div>
     </section>
 
     <!-- Who We Are -->
@@ -31,7 +42,7 @@ import Footer from '../components/Footer.astro';
       <div class="section-inner about-who-inner">
         <div class="about-who-image">
           <img
-            src="https://cornerstonehealthalaska.org/wp-content/uploads/About-Us.png"
+            src="/images/Serving-Anchorage-with-Care-for-All-Ages.webp"
             alt="Two men smiling together outdoors"
             width="400"
             height="340"
@@ -47,21 +58,20 @@ import Footer from '../components/Footer.astro';
           <p class="body-text" style="color: #1a6b72;">
             Our approach focuses on supporting the heart, mind, and spirit, guided by Christ's example of compassion and care.
           </p>
-
-          <div class="pillars-grid">
-            <div class="pillar">
-              <h3 class="pillar-title">Guided by faith</h3>
-              <p class="pillar-desc" style="color: #1a6b72;">Creating a healthier community by delivering compassionate, Christ-centered care that heals body, mind, and spirit.</p>
-            </div>
-            <div class="pillar">
-              <h3 class="pillar-title">Committed to care</h3>
-              <p class="pillar-desc">Nurturing individuals and caregivers through quality care, education, and supportive services, locally and statewide.</p>
-            </div>
-            <div class="pillar">
-              <h3 class="pillar-title">Focused on people</h3>
-              <p class="pillar-desc">Serving with compassion, integrity, and faith to deliver excellent care through grace-filled, collaborative relationships.</p>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <h3 class="pillar-title">Guided by faith</h3>
+          <p class="pillar-desc" style="color: #1a6b72;">Creating a healthier community by delivering compassionate, Christ-centered care that heals body, mind, and spirit.</p>
+        </div>
+        <div class="pillar">
+          <h3 class="pillar-title">Committed to care</h3>
+          <p class="pillar-desc">Nurturing individuals and caregivers through quality care, education, and supportive services, locally and statewide.</p>
+        </div>
+        <div class="pillar">
+          <h3 class="pillar-title">Focused on people</h3>
+          <p class="pillar-desc">Serving with compassion, integrity, and faith to deliver excellent care through grace-filled, collaborative relationships.</p>
         </div>
       </div>
     </section>
@@ -70,9 +80,9 @@ import Footer from '../components/Footer.astro';
     <section class="team-section" id="our-team" aria-labelledby="team-heading">
       <div class="section-inner">
         <div class="team-header">
-          <span class="eyebrow-label centered">GUIDED BY PURPOSE</span>
+          <span class="eyebrow-label centered teal">GUIDED BY PURPOSE</span>
           <h2 id="team-heading" class="section-heading centered">Meet Our Team</h2>
-          <p class="section-subtext centered" style="color: #1a6b72;">
+          <p class="section-subtext centered" style="max-width:900px">
             Get to know the dedicated providers, counselors, and staff behind Cornerstone Health, each committed to delivering compassionate, faith-informed care to the Anchorage community.
           </p>
         </div>
@@ -80,7 +90,7 @@ import Footer from '../components/Footer.astro';
         <div class="team-grid">
           <article class="team-card">
             <img
-              src="https://cornerstonehealthalaska.org/wp-content/uploads/Beth_Hopkins-2-e1754493334331-768x768.jpg"
+              src="/images/Beth_Hopkins-2-e1754493334331-768x768.jpg"
               alt="Beth Hopkins"
               width="220"
               height="220"
@@ -92,7 +102,7 @@ import Footer from '../components/Footer.astro';
 
           <article class="team-card">
             <img
-              src="https://cornerstonehealthalaska.org/wp-content/uploads/img-team-katya-kennedy-768x768.jpg"
+              src="/images/img-team-katya-kennedy-768x768.jpg"
               alt="Katya Kennedy"
               width="220"
               height="220"
@@ -104,7 +114,7 @@ import Footer from '../components/Footer.astro';
 
           <article class="team-card">
             <img
-              src="https://cornerstonehealthalaska.org/wp-content/uploads/Linda_King-2-e1754586899166-768x756.jpg"
+              src="/images/Linda_King-2-e1754586899166-768x756.jpg"
               alt="Linda King"
               width="220"
               height="220"
@@ -116,7 +126,7 @@ import Footer from '../components/Footer.astro';
 
           <article class="team-card">
             <img
-              src="https://cornerstonehealthalaska.org/wp-content/uploads/Suki_Lewis-2-e1755529254402-768x768.jpg"
+              src="/images/Suki_Lewis-2-e1755529254402-768x768.jpg"
               alt="Suki Lewis, PsyD"
               width="220"
               height="220"
@@ -128,7 +138,7 @@ import Footer from '../components/Footer.astro';
 
           <article class="team-card">
             <img
-              src="https://cornerstonehealthalaska.org/wp-content/uploads/Sarah_Mills-2-scaled-e1754493148312-768x768.jpg"
+              src="/images/Sarah_Mills-2-scaled-e1754493148312-768x768.jpg"
               alt="Sarah Mills"
               width="220"
               height="220"
@@ -146,7 +156,7 @@ import Footer from '../components/Footer.astro';
       <div class="section-inner privacy-inner">
         <div class="privacy-image">
           <img
-            src="https://cornerstonehealthalaska.org/wp-content/uploads/shutterstock_2576156461-scaled.jpg"
+            src="/images/shutterstock_2576156461-scaled.jpg"
             alt="Person in outdoor nature setting"
             width="400"
             height="340"
@@ -159,9 +169,26 @@ import Footer from '../components/Footer.astro';
           <p class="body-text">
             Your privacy is important to us. All client information is kept strictly confidential in accordance with HIPAA regulations and Alaska state law. We are committed to maintaining the highest standards of privacy and confidentiality.
           </p>
+          <a href="/privacy-policy/" class="btn-hero" id="hero-get-started">Learn more</a>
         </div>
       </div>
     </section>
+
+    <!-- Testimonials Section -->
+    <Testimonials
+      imageSrc="/images/about-testimonial.webp"
+      imageAlt="Smiling man with his Children looking at a laptop"
+      quote="They are very friendly and can get me in same day most of the time. The doctor is compassionate and informative. I'd recommend them to anyone looking for a good doctor and nursing staff!"
+      author="Medical Client"
+    />
+
+    <!-- CTA Section -->
+    <CTASection
+      imageSrc="/images/Find-the-Right-Fit-for-Your-Care.png"
+      altText="Smiling woman sitting on a couch using a laptop"
+      title="Ready to take the next step?"
+      description="Schedule an appointment with one of our compassionate providers today and begin your journey toward healing and growth."
+    />
   </main>
 
   <Footer />
@@ -178,61 +205,82 @@ import Footer from '../components/Footer.astro';
     -webkit-font-smoothing: antialiased;
   }
   img { max-width: 100%; height: auto; display: block; }
-  .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-  .eyebrow-label { display: block; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 1px; color: #f36e24; text-transform: uppercase; margin-bottom: 8px; }
-  .eyebrow-label.teal { color: #1a6b72; }
-  .eyebrow-label.centered { text-align: center; }
-  .section-heading { font-family: 'Montserrat', sans-serif; font-size: clamp(24px, 3vw, 38px); font-weight: 700; color: #0b2545; margin: 0 0 20px; line-height: 1.2; }
-  .section-heading.centered { text-align: center; }
-  .section-subtext { font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 40px; }
-  .section-subtext.centered { text-align: center; }
-  .body-text { font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 16px; }
+
 
   /* Page Hero */
-  .page-hero {
-    background: #1a6b72;
-    padding: 48px 0 40px;
+
+  .page-hero-title { 
+    font-family: 'Montserrat', sans-serif; 
+    font-size: clamp(32px, 5vw, 64px); 
+    font-weight: 700; 
+    color: #fff; 
+    margin: 0 0 12px; 
   }
-  .page-hero-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+  .page-hero-desc { 
+    font-size: 18px; 
+    font-weight: 500;
+    color: rgba(255,255,255,0.85); 
+    margin: 0; 
+    max-width: 500px; 
+    line-height: 1.6; 
   }
-  .breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 12px;
+
+  .page-hero-image img { 
+    width: 100%; 
+    max-height: 400px;
+    object-fit: cover;
   }
-  .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
-  .breadcrumb a:hover { color: #fff; }
-  .breadcrumb span { color: rgba(255,255,255,0.5); }
-  .page-hero-title { font-family: 'Montserrat', sans-serif; font-size: clamp(32px, 4vw, 52px); font-weight: 700; color: #fff; margin: 0 0 12px; }
-  .page-hero-desc { font-size: 15px; color: rgba(255,255,255,0.85); margin: 0; max-width: 500px; line-height: 1.6; }
 
   /* About Who We Are */
-  .about-who { padding: 80px 0; }
-  .about-who-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 60px; align-items: start; }
+  .about-who { 
+    padding: 80px 0;
+    background: #f1f9fa;
+  }
+  .about-who-inner { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 60px; 
+    align-items: start; 
+  }
   .about-who-image img { border-radius: 16px; width: 100%; }
 
-  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
-  .pillar-title { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: #0b2545; margin: 0 0 8px; }
-  .pillar-desc { font-size: 13px; line-height: 1.6; color: #555; margin: 0; }
+  .pillars-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; 
+    margin: 40px;
+  }
+
+  .pillar{
+    padding: 20px;
+  }
+
+  .pillar-title { 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0b2545;
+    margin: 0 0 8px;
+  }
+  .pillar-desc { 
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+  }
 
   /* Team */
-  .team-section { padding: 80px 0; background: #f8f8f8; }
-  .team-header { text-align: center; margin-bottom: 40px; }
+  .team-section { padding: 80px 0; background: #fff; }
+  .team-header { text-align: center; margin-bottom: 40px; font-size: 46px; }
   .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
   .team-card { text-align: center; }
   .team-card img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; margin-bottom: 12px; }
-  .team-name { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: #0b2545; margin: 0 0 4px; }
-  .team-role { font-size: 12px; color: #666; margin: 0; }
+  .team-name { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #0b2545; margin: 0 0 4px; }
+  .team-role { font-size: 18px; color: #666; margin: 0; }
 
   /* Privacy */
   .privacy-section { padding: 80px 0; }
-  .privacy-inner { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start; }
+  .privacy-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
   .privacy-image img { border-radius: 16px; width: 100%; }
 
   @media (max-width: 1024px) {

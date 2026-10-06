@@ -9,7 +9,7 @@ export interface Props {
 const {
   title = "Home | CORNERSTONE HEALTH",
   description = "Faith-based counseling services in Anchorage offering support for individuals, couples, and families. Schedule an appointment today.",
-  ogImage = "https://cornerstonehealthalaska.org/wp-content/uploads/Union.png",
+  ogImage = "/images/Union.png",
   canonical = "https://cornerstonehealthalaska.org/",
 } = Astro.props;
 ---
@@ -22,9 +22,9 @@ const {
     <link rel="profile" href="https://gmpg.org/xfn/11" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="https://cornerstonehealthalaska.org/wp-content/uploads/health-fav-icon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/images/health-fav-icon.svg" />
     <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="https://cornerstonehealthalaska.org/wp-content/uploads/health-fav-icon.svg" />
+    <link rel="apple-touch-icon" href="/images/health-fav-icon.svg" />
 
     <!-- SEO -->
     <title>{title}</title>
@@ -68,7 +68,7 @@ const {
             "url": "https://cornerstonehealthalaska.org/",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://cornerstonehealthalaska.org/wp-content/uploads/Cornerstone-Logo-White.svg"
+              "url": "/images/Cornerstone-Logo-White.svg"
             }
           },
           {
@@ -90,6 +90,21 @@ const {
 </html>
 
 <style is:global>
+  :root {
+    --color-navy: #0b2545;
+    --color-navy-dark: #093248;
+    --color-teal: #1a6b72;
+    --color-deep-teal: #006271;
+    --color-light-teal: #3bc1cc;
+    --color-orange: #f36e24;
+    --color-orange-hover: #e05c15;
+    --color-ice-blue: #f1f9fa;
+    --color-text-slate: #5e6b71;
+    --color-white: #ffffff;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Manrope', sans-serif;
+  }
+
   *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -101,9 +116,10 @@ const {
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Manrope', sans-serif;
-    color: #030320;
-    background: #fff;
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--color-text-slate);
+    background: var(--color-white);
     -webkit-font-smoothing: antialiased;
   }
 
@@ -113,104 +129,125 @@ const {
     display: block;
   }
 
-  /* Shared Container & Typo */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-navy);
+  }
+
+  /* Shared Container & Typography */
   .section-inner {
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
     padding: 0 24px;
   }
 
   .eyebrow-label {
     display: block;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+    font-family: var(--font-heading);
+    font-size: 16px;
     font-weight: 600;
-    letter-spacing: 1px;
-    color: #f36e24;
+    letter-spacing: 2px;
+    color: var(--color-orange);
     text-transform: uppercase;
     margin-bottom: 8px;
   }
 
-  .eyebrow-label.teal { color: #1a6b72; }
+  .eyebrow-label.teal { color: var(--color-teal); }
   .eyebrow-label.centered { text-align: center; }
 
   .section-heading {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(26px, 3vw, 40px);
+    font-family: var(--font-heading);
+    font-size: clamp(26px, 3.5vw, 48px);
     font-weight: 700;
-    color: #0b2545;
+    color: var(--color-navy);
     margin: 0 0 20px;
     line-height: 1.2;
+    letter-spacing: -0.5px;
   }
 
   .section-heading.centered { text-align: center; }
 
   .section-subtext {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
+    font-size: 18px;
+    color: var(--color-text-slate);
+    line-height: 1.65;
     margin-bottom: 40px;
   }
 
-  .section-subtext.centered { text-align: center; }
+  .section-subtext.centered { text-align: center; margin:auto}
 
   .body-text {
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.7;
-    color: #444;
+    color: var(--color-text-slate);
     margin-bottom: 16px;
   }
 
   /* Shared Page Hero */
-  .page-hero {
-    background: #1a6b72;
-    padding: 48px 0 40px;
+  .page-hero{
+    position: relative;
+    overflow: hidden;
+    background-image: url("/images/crnstnhealth-Hero-banner.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 320px;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 48px 24px;
   }
 
-  .page-hero-inner {
-    max-width: 1200px;
+  .page-hero-inner{
+    flex: 1;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 10px 24px;
+  }
+
+  .page-hero-content{
+    flex: 1;
+    font-size: 22px;
+    font-weight: 500;
+    padding: 10px 24px;
   }
 
   .breadcrumb {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font-heading);
+    color: #ffa150;
+    text-transform: uppercase;
     margin-bottom: 12px;
   }
-
+  
   .breadcrumb a {
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffa150;
     text-decoration: none;
     transition: color 0.2s;
   }
 
-  .breadcrumb a:hover {
-    color: #ffffff;
-  }
-
-  .breadcrumb span {
-    color: rgba(255, 255, 255, 0.5);
-  }
-
   .page-hero-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(32px, 4vw, 52px);
+    font-family: var(--font-heading);
+    font-size: clamp(32px, 4.2vw, 52px);
     font-weight: 700;
     color: #ffffff;
     margin: 0 0 12px;
     line-height: 1.15;
+    letter-spacing: 1px;
   }
 
   .page-hero-desc {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.9);
     margin: 0;
     max-width: 600px;
     line-height: 1.6;
+    letter-spacing: 0.5px;
   }
 
   /* Shared Buttons */
@@ -222,13 +259,15 @@ const {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #f36e24;
+    background: var(--color-orange);
     color: #ffffff !important;
     text-decoration: none;
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 700;
     border-radius: 50px;
     transition: background 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
   }
 
   .btn-hero {
@@ -265,8 +304,7 @@ const {
   .btn-cta-lg:hover,
   .btn-cta-orange:hover,
   .btn-view-more:hover {
-    background: #e05c15;
-    transform: translateY(-2px);
+    background: var(--color-orange-hover);
   }
 
   /* Shared How It Works Section */
@@ -287,89 +325,52 @@ const {
   }
 
   .how-step {
-    background: #f0f8f9;
+    background: var(--color-ice-blue);
     border-radius: 16px;
-    padding: 40px 32px;
+    padding: 80px 32px 40px 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
     text-align: center;
+    position: relative;
+    margin-top: 48px;
   }
 
   .step-icon {
-    flex-shrink: 0;
+    position: absolute;
+    top: -48px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90px;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #66cbd8;
+
+    color: #002d55;
+    font-size: 36px;
+    font-weight: 700;
   }
 
   .step-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-heading);
     font-size: 18px;
     font-weight: 700;
-    color: #0b2545;
+    color: var(--color-navy);
     margin: 0;
   }
 
   .step-desc {
     font-size: 14px;
     line-height: 1.6;
-    color: #555;
+    color: var(--color-text-slate);
     margin: 0;
-  }
-
-  /* Shared Testimonial Section */
-  .testimonial-section {
-    background: #0b2545;
-    overflow: hidden;
-  }
-
-  .testimonial-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-  }
-
-  .testimonial-quote-wrap {
-    padding: 60px 60px 60px 24px;
-  }
-
-  .testimonial-card {
-    color: #ffffff;
-  }
-
-  .testimonial-label {
-    display: block;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    color: #f36e24;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-
-  .testimonial-quote {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(20px, 2.5vw, 30px);
-    font-weight: 700;
-    line-height: 1.3;
-    color: #ffffff;
-    margin: 0 0 20px;
-  }
-
-  .testimonial-author {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0;
-    font-style: italic;
-  }
-
-  .testimonial-image img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    object-position: center top;
   }
 
   /* Shared Blog Card & Grid */
@@ -383,7 +384,7 @@ const {
     background: #ffffff;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 0 2px 0 rgba(205, 205, 205, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
   }
@@ -416,26 +417,26 @@ const {
   }
 
   .blog-category {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-heading);
     font-size: 12px;
     font-weight: 600;
-    color: #555;
+    color: var(--color-text-slate);
     text-transform: uppercase;
   }
 
   .blog-date {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-heading);
     font-size: 12px;
-    color: #777;
+    color: #888;
   }
 
   .blog-card-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-heading);
     font-size: 20px;
     font-weight: 600;
     line-height: 1.4;
     letter-spacing: -0.4px;
-    color: #030320;
+    color: var(--color-navy);
     margin: 0 0 24px;
     flex: 1;
   }
@@ -447,16 +448,16 @@ const {
   }
 
   .blog-card-title a:hover {
-    color: #1a6b72;
+    color: var(--color-teal);
   }
 
   .read-more-link {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #f36e24;
+    color: var(--color-orange);
     text-decoration: none;
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-heading);
     font-size: 14px;
     font-weight: 600;
     transition: gap 0.2s;
@@ -465,73 +466,6 @@ const {
 
   .read-more-link:hover {
     gap: 12px;
-  }
-
-  /* Shared CTA Banner */
-  .cta-banner {
-    background: #1a6b72;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .cta-banner-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 360px 1fr;
-    align-items: center;
-    min-height: 340px;
-  }
-
-  .cta-banner-image {
-    position: relative;
-    height: 340px;
-    overflow: hidden;
-  }
-
-  .cta-banner-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 0 200px 200px 0;
-  }
-
-  .cta-banner-content {
-    padding: 48px 24px 48px 48px;
-    color: #ffffff;
-  }
-
-  .cta-banner-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(22px, 2.5vw, 32px);
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0 0 16px;
-    line-height: 1.25;
-  }
-
-  .cta-banner-desc {
-    font-size: 14px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 12px;
-  }
-
-  .cta-phone {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    margin-top: 12px;
-    transition: color 0.2s;
-  }
-
-  .cta-phone:hover {
-    color: #f0c040;
   }
 
   /* Shared Legal Content */
@@ -545,20 +479,20 @@ const {
     margin: 0 auto;
     font-size: 15px;
     line-height: 1.7;
-    color: #444;
+    color: var(--color-text-slate);
   }
 
   .legal-content h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-heading);
     font-size: 28px;
-    color: #0b2545;
+    color: var(--color-navy);
     margin-top: 0;
   }
 
   .legal-content h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-heading);
     font-size: 20px;
-    color: #1a6b72;
+    color: var(--color-teal);
     margin-top: 32px;
   }
 
@@ -567,7 +501,7 @@ const {
   }
 
   .legal-content a {
-    color: #f36e24;
+    color: var(--color-orange);
     text-decoration: none;
   }
 

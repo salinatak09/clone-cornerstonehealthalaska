@@ -8,7 +8,7 @@
       <!-- Logo -->
       <a href="/" class="nav-logo" aria-label="Cornerstone Health Home">
         <img
-          src="https://cornerstonehealthalaska.org/wp-content/uploads/Cornerstone-Logo-White.svg"
+          src="/images/Cornerstone-Logo-White.svg"
           alt="CORNERSTONE HEALTH"
           width="160"
           height="52"
@@ -18,17 +18,7 @@
 
       <!-- Primary Nav Links -->
       <ul class="nav-links" id="nav-links">
-        <li class="nav-item has-dropdown">
-          <a href="/services/counseling/" class="nav-link">
-            Services
-            <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
-              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="/services/counseling/">Counseling</a></li>
-          </ul>
-        </li>
+        <li class="nav-item"><a href="/services/counseling/" class="nav-link">Counseling</a></li>
         <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
         <li class="nav-item"><a href="/resources/" class="nav-link">Resources</a></li>
         <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
@@ -90,6 +80,16 @@
       }
     }
   });
+
+  const header = document.querySelector("#site-header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      header?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+    }
+  });
 </script>
 
 <style>
@@ -97,8 +97,15 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #1a6b72;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    background: #136874;
+    border-bottom: #31838a 1px solid;
+    /* box-shadow: 0 2px 8px rgba(0,0,0,0.15); */
+  }
+
+  .site-header.scrolled {
+    background-color: #224549;
+    border-bottom: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   }
 
   .nav-container {
@@ -149,57 +156,11 @@
     height: 72px;
     color: #ffffff;
     text-decoration: none;
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     white-space: nowrap;
     transition: color 0.2s;
-  }
-
-  .nav-link:hover {
-    color: #f0c040;
-  }
-
-  .dropdown-arrow {
-    transition: transform 0.2s;
-  }
-
-  .has-dropdown:hover .dropdown-arrow {
-    transform: rotate(180deg);
-  }
-
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    padding: 8px 0;
-    list-style: none;
-    min-width: 180px;
-    z-index: 100;
-  }
-
-  .has-dropdown:hover .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-menu a {
-    display: block;
-    padding: 10px 20px;
-    color: #0b2545;
-    text-decoration: none;
-    font-family: 'Manrope', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background 0.15s;
-  }
-
-  .dropdown-menu a:hover {
-    background: #f0f8f9;
-    color: #1a6b72;
   }
 
   .nav-actions {
@@ -216,25 +177,21 @@
     gap: 6px;
     color: #ffffff;
     text-decoration: none;
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     white-space: nowrap;
     transition: color 0.2s;
-  }
-
-  .nav-phone:hover {
-    color: #f0c040;
   }
 
   .btn-orange {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #f36e24;
+    background: var(--color-orange, #f36e24);
     color: #ffffff !important;
     text-decoration: none;
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
     font-size: 14px;
     font-weight: 700;
     padding: 10px 22px;
@@ -244,22 +201,18 @@
   }
 
   .btn-orange:hover {
-    background: #e05c15;
+    background: var(--color-orange-hover, #e05c15);
     transform: translateY(-1px);
   }
 
   .nav-billing {
     color: #ffffff;
     text-decoration: none;
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     white-space: nowrap;
     transition: color 0.2s;
-  }
-
-  .nav-billing:hover {
-    color: #f0c040;
   }
 
   .hamburger {
@@ -314,8 +267,6 @@
     border-bottom: 1px solid rgba(255,255,255,0.1);
     transition: color 0.2s;
   }
-
-  .mobile-nav-links a:hover { color: #f0c040; }
 
   .mobile-cta {
     margin-top: 8px;

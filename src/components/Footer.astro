@@ -10,7 +10,7 @@
       <div class="footer-brand-col">
         <a href="/" class="footer-logo-link">
           <img
-            src="https://cornerstonehealthalaska.org/wp-content/uploads/Cornerstone-logo-footer.svg"
+            src="/images/Cornerstone-logo-footer.svg"
             alt="Cornerstone Health"
             width="280"
             height="90"
@@ -22,16 +22,16 @@
         </p>
         <div class="partner-logos-grid">
           <a href="https://www.alaskamedicalmissions.org/" target="_blank" rel="noopener" aria-label="Alaska Medical Missions">
-            <img src="https://cornerstonehealthalaska.org/wp-content/uploads/AMM-BUTTON-New.png" alt="Alaska Medical Missions" width="160" height="100" loading="lazy" />
+            <img src="/images/AMM-BUTTON-New.png" alt="Alaska Medical Missions" width="160" height="100" loading="lazy" />
           </a>
           <a href="https://anchorageprojectaccess.org/" target="_blank" rel="noopener" aria-label="Anchorage Project Access">
-            <img src="https://cornerstonehealthalaska.org/wp-content/uploads/APA-BUTTON-600x373-1.png" alt="Anchorage Project Access" width="160" height="100" loading="lazy" />
+            <img src="/images/APA-BUTTON-600x373-1.png" alt="Anchorage Project Access" width="160" height="100" loading="lazy" />
           </a>
           <a href="https://healthysmilesforever.org/" target="_blank" rel="noopener" aria-label="Healthy Smiles Forever">
-            <img src="https://cornerstonehealthalaska.org/wp-content/uploads/HSF-BUTTON-1-600x373-1.png" alt="Healthy Smiles Forever" width="160" height="100" loading="lazy" />
+            <img src="/images/HSF-BUTTON-1-600x373-1.png" alt="Healthy Smiles Forever" width="160" height="100" loading="lazy" />
           </a>
           <a href="https://aksbhc.org/" target="_blank" rel="noopener" aria-label="Alaska State Behavioral Health Association">
-            <img src="https://cornerstonehealthalaska.org/wp-content/uploads/ASBCC-BUTTON-600x373-1.png" alt="Alaska State Behavioral Health" width="160" height="100" loading="lazy" />
+            <img src="/images/ASBCC-BUTTON-600x373-1.png" alt="Alaska State Behavioral Health" width="160" height="100" loading="lazy" />
           </a>
         </div>
       </div>
@@ -109,17 +109,17 @@
 
 <style>
   .site-footer {
-    font-family: 'Manrope', sans-serif;
-    color: #ffffff;
+    font-family: var(--font-body, 'Manrope', sans-serif);
+    color: #333;
   }
 
   .footer-main {
-    background: #0b2545;
+    background: #c8e9ed;
     padding: 60px 0 40px;
+    font-size: 16px;
   }
 
   .footer-inner {
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
     display: grid;
@@ -135,22 +135,22 @@
   }
 
   .footer-logo-link img {
-    max-width: 240px;
+    max-width: 100%;
     height: auto;
+    margin: 20px 0;
   }
 
   .footer-tagline {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+    color: #333;
     margin: 0;
   }
 
   .partner-logos-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 8px;
+    gap: 12px;
   }
 
   .partner-logos-grid a {
@@ -159,17 +159,11 @@
     justify-content: center;
     background: rgba(255, 255, 255, 0.06);
     border-radius: 8px;
-    padding: 8px;
     transition: background 0.2s;
-  }
-
-  .partner-logos-grid a:hover {
-    background: rgba(255, 255, 255, 0.12);
   }
 
   .partner-logos-grid img {
     max-width: 100%;
-    max-height: 48px;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -187,10 +181,10 @@
   }
 
   .footer-heading {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 24px;
     font-weight: 700;
-    color: #ffffff;
+    color: #333;
     margin: 0 0 4px;
   }
 
@@ -204,26 +198,22 @@
   }
 
   .footer-links a {
-    color: rgba(255, 255, 255, 0.75);
+    color: #333;
     text-decoration: none;
-    font-size: 14px;
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 16px;
     transition: color 0.2s;
   }
 
-  .footer-links a:hover {
-    color: #3ac1cd;
-  }
-
   .footer-hours p {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 13px;
+    color: #333;
     line-height: 1.5;
     margin: 2px 0;
   }
 
   .footer-hours strong {
-    color: #ffffff;
-    font-weight: 600;
+    color: #333;
+    font-weight: 700;
   }
 
   .footer-social {
@@ -238,29 +228,30 @@
     justify-content: center;
     width: 34px;
     height: 34px;
-    background: rgba(255, 255, 255, 0.12);
-    color: #ffffff;
+    background: #ffffff;
+    color: #f58320;
     border-radius: 50%;
     text-decoration: none;
     transition: background 0.2s, transform 0.15s;
   }
 
   .social-icon:hover {
-    background: #f36e24;
-    transform: translateY(-2px);
+    background: #f58320;
+    color: #ffffff;
   }
 
   /* Bottom bar */
   .footer-bottom {
-    background: #071930;
-    padding: 18px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #c8e9ed;
+    color: #190d39;
+    letter-spacing: 0.5px;
+    padding: 16px 24px;
+    border-top: 1px solid #33333349;
+    font-size: 14px;
   }
 
   .footer-bottom-inner {
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -270,19 +261,15 @@
 
   .footer-copyright,
   .footer-credit {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-    margin: 0;
+    font-weight: 500;
+    color: #190d39;
   }
 
   .footer-credit a {
-    color: rgba(255, 255, 255, 0.6);
+    color: #190d39;
+    font-weight: 700;
     text-decoration: none;
     transition: color 0.2s;
-  }
-
-  .footer-credit a:hover {
-    color: #3ac1cd;
   }
 
   .footer-policy-links {
@@ -291,14 +278,10 @@
   }
 
   .footer-policy-links a {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    color: #190d39;
     text-decoration: none;
     transition: color 0.2s;
-  }
-
-  .footer-policy-links a:hover {
-    color: #3ac1cd;
   }
 
   @media (max-width: 1024px) {
